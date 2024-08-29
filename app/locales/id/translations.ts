@@ -1,0 +1,18 @@
+export const translations = {
+  title: "Portal Lowongan Kerja Pemerintah Indonesia",
+  search: "Cari lowongan kerja...",
+  searchButton: "Cari",
+  education: "Pendidikan",
+  majorStudy: "Jurusan",
+  agency: "Instansi Pemerintah",
+  jobType: "Jenis Pekerjaan",
+  noResults: "Tidak ada lowongan kerja ditemukan",
+  noResultsDesc: "Jangan khawatir! Coba sesuaikan pencarian atau filter Anda.",
+  refresh: "Segarkan",
+  gridView: "Tampilan grid",
+  tableView: "Tampilan tabel",
+  jobTitle: "Judul",
+  jobAgency: "Instansi",
+  jobEducation: "Pendidikan",
+  jobMajor: "Jurusan",
+};

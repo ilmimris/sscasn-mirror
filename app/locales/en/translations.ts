@@ -1,0 +1,18 @@
+export const translations = {
+  title: "Indonesia Government Job Portal",
+  search: "Search for job vacancies...",
+  searchButton: "Search",
+  education: "Education",
+  majorStudy: "Major Study",
+  agency: "Government Agency",
+  jobType: "Job Type",
+  noResults: "No job vacancies found",
+  noResultsDesc: "Don't worry! Try adjusting your search or filters.",
+  refresh: "Refresh",
+  gridView: "Grid view",
+  tableView: "Table view",
+  jobTitle: "Title",
+  jobAgency: "Agency",
+  jobEducation: "Education",
+  jobMajor: "Major",
+};
