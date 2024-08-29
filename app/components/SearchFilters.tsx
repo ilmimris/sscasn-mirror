@@ -110,7 +110,7 @@ export const SearchFilters: React.FC<SearchFiltersProps> = ({
     return (
       <Popover
         open={openCombobox[type]}
-        onOpenChange={(open) =>
+        onOpenChange={(open: boolean) =>
           setOpenCombobox((prev) => ({ ...prev, [type]: open }))
         }
       >
