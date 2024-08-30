@@ -11,16 +11,35 @@ interface SemanticSearchProps {
     t: Translation
 }
 
-const semanticSearch = (query: string, filters: any) => {
-    console.log('Performing semantic search with:', query, filters)
+const semanticSearch = async (query: string, filters: any) => {
+    console.log('Melakukan pencarian semantik dengan:', query, filters)
     if (query === "no results") {
         return []
     }
-    return [
-        { id: 1, title: 'Data Analyst', agency: 'Ministry of Finance', type: 'CPNS', education: 'S-1', major: 'Statistics' },
-        { id: 2, title: 'Software Engineer', agency: 'Ministry of Technology', type: 'PPPK', education: 'S-1', major: 'Computer Science' },
-        { id: 3, title: 'Environmental Specialist', agency: 'Ministry of Environment', type: 'CPNS', education: 'S-2', major: 'Environmental Science' },
-    ]
+    
+    const { agency, education, major } = filters
+    
+    try {
+        const response = await fetch(`/api/jobs?agency_id=${agency.id}&education_id=${education.id}&major_id=${major.id}`)
+        const data = await response.json()
+        
+        if (Array.isArray(data)) {
+            return data.map(job => ({
+                id: job.id,
+                title: job.position_name,
+                agency: job.agency_name,
+                type: job.job_name + " - " + job.formation_name,
+                education: job.education_level,
+                major: job.education_program
+            }))
+        } else {
+            console.error('Data yang diterima bukan array:', data)
+            return []
+        }
+    } catch (error) {
+        console.error('Kesalahan saat mengambil data pekerjaan:', error)
+        return []
+    }
 }
 
 
