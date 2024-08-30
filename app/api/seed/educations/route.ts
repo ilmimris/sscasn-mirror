@@ -30,7 +30,7 @@ export async function POST(request: Request) {
   // Create table if not exists
   await sql`CREATE TABLE IF NOT EXISTS educations (
     id VARCHAR(255) PRIMARY KEY, 
-    nama VARCHAR(255),
+    name VARCHAR(255),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
   );`;
