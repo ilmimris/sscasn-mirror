@@ -14,7 +14,8 @@ export async function DELETE(request: Request) {
     }
 
     // Hapus tabel
-    await sql`DROP TABLE IF EXISTS ${tableName};`;
+    const query = `DROP TABLE IF EXISTS ${tableName}`;
+    await sql.query(query);
 
     return NextResponse.json(
       { pesan: `Tabel ${tableName} berhasil dihapus`, status: "Sukses" },
