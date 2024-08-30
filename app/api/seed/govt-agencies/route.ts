@@ -33,7 +33,7 @@ export async function POST(request: Request) {
     }
 
     // Create table if not exists
-    await sql`CREATE TABLE IF NOT EXIST agencies (
+    await sql`CREATE TABLE IF NOT EXISTS agencies (
         id VARCHAR(255) PRIMARY KEY,
         lokasiId VARCHAR(255),
         nama VARCHAR(255),
